@@ -71,12 +71,12 @@ lmstudio_endpoint=http://localhost:1234/v1
 - `models.py`: Database models and operations
 
 ## Demo
+
+![Demo Screenshot 1](data/menu.png)
+<br>*Extension popup showing latest AI papers*
 <br>
-![Demo Screenshot 1](data/menu.png)<br>
-*Extension popup showing latest AI papers*
-<br>
-![Demo Screenshot 2](data/describe.png)<br>
-*Paper details with AI-generated summary*
+![Demo Screenshot 2](data/describe.png)
+<br>*Paper details with AI-generated summary*
 
 ## License
 
