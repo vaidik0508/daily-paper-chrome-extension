@@ -20,7 +20,9 @@ MAX_RETRIES = 3
 MAX_WORKERS = 4
 
 model = os.getenv('model')
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.25, api_key=os.getenv('OPENAI_API_KEY'))
+endpoint = os.getenv('lmstudio_endpoint')
+api_key = os.getenv('api_key')
+llm = ChatOpenAI(model=model, temperature=0.25, base_url= endpoint, api_key=api_key)
 
 class PaperAnalysis(BaseModel):
     title: str
