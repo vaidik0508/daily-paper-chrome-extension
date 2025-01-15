@@ -5,7 +5,7 @@ A Chrome extension that shows daily research papers in AI with detailed explanat
 ## Features
 
 - Daily updates of new AI research papers from arXiv
-- AI-powered paper analysis and summarization
+- AI-powered paper analysis and summarization using AI Agent (used CrewAI for agent orchestration)
 - Section-wise paper explanations
 - Easy-to-use Chrome extension interface
 - MongoDB-based storage for processed papers
@@ -14,10 +14,10 @@ A Chrome extension that shows daily research papers in AI with detailed explanat
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11
 - MongoDB
 - Chrome browser
-- Ollama with phi3.5 model installed
+- LMStudio with required model
 
 ### Installation
 
@@ -37,6 +37,9 @@ pip install -r requirements.txt
 MONGODB_URL=mongodb://localhost:27017
 MONGODB_DB_NAME=ai_papers
 MAX_PAPERS=5
+model=llama2-70b  # use any function calling supported LLM model from LMStudio
+api_key="lm-studio"  # do not change in api key
+lmstudio_endpoint=http://localhost:1234/v1
 ```
 
 4. Install the Chrome extension:
@@ -44,6 +47,9 @@ MAX_PAPERS=5
    - Enable "Developer mode"
    - Click "Load unpacked"
    - Select the `chrome_extension` folder
+
+### Important Note
+⚠️ Before using the extension, make sure the backend API server is running. The extension requires the server to fetch and display papers and make sure to install [LMStudio](https://lmstudio.ai/) and download required LLM model and start local server of it from app.
 
 ### Usage
 
@@ -63,6 +69,14 @@ MAX_PAPERS=5
 - `app.py`: FastAPI backend server
 - `utils.py`: Paper fetching and processing logic
 - `models.py`: Database models and operations
+
+## Demo
+
+![Demo Screenshot 1](data/menu.png)
+*Extension popup showing latest AI papers*
+
+![Demo Screenshot 2](data/describe.png)
+*Paper details with AI-generated summary*
 
 ## License
 

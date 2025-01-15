@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "Daily AI Research Papers",
+    "description": "View daily AI research papers with detailed explanations",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "alarms"
+    ],
+    "host_permissions": [
+        "http://localhost:5000/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}

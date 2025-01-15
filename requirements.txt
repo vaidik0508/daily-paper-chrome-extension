@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+motor
+pymongo
+python-dotenv
+crewai
+crewai-tools
+PyMuPDF
+langchain-ollama
+langchain-openai
+arxiv
+python-multipart
+requests

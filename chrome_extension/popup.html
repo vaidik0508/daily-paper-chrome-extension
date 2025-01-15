@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Daily AI Papers</title>
+    <style>
+        body {
+            width: 400px;
+            padding: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        #loading, #error {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
+
+        .paper-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .paper-title {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: #1a73e8;
+        }
+
+        .paper-authors, .paper-topics {
+            margin: 4px 0;
+            font-size: 14px;
+            color: #5f6368;
+        }
+
+        .details-btn {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .details-btn:hover {
+            background: #1557b0;
+        }
+
+        #error {
+            color: #d93025;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Loading papers...</div>
+    <div id="error"></div>
+    <div id="paperList"></div>
+    <script src="popup.js"></script>
+</body>
+</html>

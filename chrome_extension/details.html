@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paper Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff; /* Light cool blue background */
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            color: #444;
+            margin: 0;
+        }
+        .header .authors {
+            font-size: 16px;
+            color: #777;
+            margin-top: 5px;
+        }
+        .header .authors span {
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+        .markdown-body {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #e6f7ff; /* Lighter cool blue background */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .markdown-body h2 {
+            color: #555;
+        }
+        .markdown-body p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="title"></h1>
+            <div id="authors" class="authors"><span>Authors:</span> <span id="authors-list"></span></div>
+        </div>
+        <div id="explanation" class="markdown-body"></div>
+    </div>
+    <script src="marked.min.js"></script>
+    <script src="details.js"></script>
+</body>
+</html>
