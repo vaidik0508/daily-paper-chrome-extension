@@ -13,6 +13,7 @@ import arxiv
 import requests
 import asyncio
 from langchain_openai import ChatOpenAI
+from crewai import LLM
 load_dotenv(override=True)
 
 MAX_PAPERS = int(os.getenv('MAX_PAPERS', 3))
@@ -22,7 +23,9 @@ MAX_WORKERS = 4
 model = os.getenv('model')
 endpoint = os.getenv('lmstudio_endpoint')
 api_key = os.getenv('api_key')
-llm = ChatOpenAI(model=model, temperature=0.25, base_url= endpoint, api_key=api_key)
+
+llm = LLM(model=model, temperature=0.25, base_url= endpoint, api_key=api_key)
+# llm = ChatOpenAI(model=model, temperature=0.25, base_url= endpoint, api_key=api_key)
 
 class PaperAnalysis(BaseModel):
     title: str

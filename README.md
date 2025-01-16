@@ -1,6 +1,6 @@
 # Daily AI Research Papers Chrome Extension
 
-A Chrome extension that shows daily research papers in AI with detailed explanations using AI-powered analysis completely locally using LLM from LMStudio.
+A Chrome extension that shows daily research papers in AI with detailed explanations using AI-powered analysis using LLM from OpenAI, OLLAMA, LMStudio.
 
 ## Features
 
@@ -37,9 +37,26 @@ pip install -r requirements.txt
 MONGODB_URL=mongodb://localhost:27017
 MONGODB_DB_NAME=ai_papers
 MAX_PAPERS=5
-model=llama2-70b  # use any function calling supported LLM model from LMStudio
-api_key="lm-studio"  # do not change in api key
-lmstudio_endpoint=http://localhost:1234/v1
+
+# Choose ONE of the following LLM configurations:
+
+# For OpenAI:
+llm_provider=openai
+api_key=your-openai-api-key
+model=gpt-4-turbo-preview  # or gpt-3.5-turbo
+base_url=https://api.openai.com/v1
+
+# For LMStudio:
+llm_provider=lmstudio
+api_key=lm-studio  # do not change this
+model=llama-3.2-3b-instruct  # use any function calling supported model from LMStudio
+base_url=http://localhost:1234/v1
+
+# For Ollama:
+llm_provider=ollama
+api_key=not-needed  # no api key required for Ollama
+model=mistral  # or any other model you've pulled in Ollama
+base_url=http://localhost:11434/api
 ```
 
 4. Install the Chrome extension:
